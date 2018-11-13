@@ -18,7 +18,7 @@ jobs:
       DATABASE_PASSWORD: password
     steps:
     - run: echo "Haello Worlt!"       
-    - ## do a checkout here
+    - checkout
     - run:
         name: "test with sbt"
         command: |
@@ -48,7 +48,7 @@ jobs:
       DATABASE_USER: user
       DATABASE_PASSWORD: password
     steps:
-    - ## checkout
+    - checkout
     - ## setup a remote docker env with version: 17.09.0-ce
     - ## build your app with sbt flyway/flywayMigrate and sbt -Dbranch=$CIRCLE_BRANCH -Dversion=$CIRCLE_SHA1 docker:publish
   deploy:
